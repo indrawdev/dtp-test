@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('employee');
 });
 
-Route::get('/employees', [EmployeesController::class, 'index']);
-Route::get('/employees/{id}/educations', [EmployeesController::class, 'loadEducation']);
-Route::get('/employees/{id}/experiences', [EmployeesController::class, 'loadExperience']);
+Route::post('/employees/main', [EmployeesController::class, 'loadEmployee']);
+Route::post('/employees/educations', [EmployeesController::class, 'loadEducation']);
+Route::post('/employees/experiences', [EmployeesController::class, 'loadExperience']);
+Route::post('/employees/store', [EmployeesController::class, 'store']);
+Route::post('/employees/savedu', [EmployeesController::class, 'storeEducation']);
+Route::post('/employees/savexp', [EmployeesController::class, 'storeExperience']);
+Route::post('/employees/delete', [EmployeesController::class, 'destroy']);
